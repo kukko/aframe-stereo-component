@@ -53,12 +53,12 @@ module.exports = {
               if (this.data.mode === "half") {
 
                   var geo_def = this.el.getAttribute("geometry");
-                  var geometry = new THREE.SphereGeometry(geo_def.radius || 100, geo_def.segmentsWidth || 64, geo_def.segmentsHeight || 64, Math.PI / 2, Math.PI, 0, Math.PI);
+                  var geometry = new THREE.SphereGeometry(geo_def.radius || 100, geo_def.segmentsWidth || 64, geo_def.segmentsHeight || 64, Math.PI / 2, Math.PI, geo_def.thetaStart, geo_def.thetaLength);
 
               }
               else {
                   var geo_def = this.el.getAttribute("geometry");
-                  var geometry = new THREE.SphereGeometry(geo_def.radius || 100, geo_def.segmentsWidth || 64, geo_def.segmentsHeight || 64);
+                  var geometry = new THREE.SphereGeometry(geo_def.radius || 100, geo_def.segmentsWidth || 64, geo_def.segmentsHeight || 64, 0, Math.PI, geo_def.thetaStart, geo_def.thetaLength);
               }
 
               // Panorama in front
